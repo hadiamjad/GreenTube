@@ -1,0 +1,104 @@
+﻿.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+}
+
+.jumbotron{
+    height:auto;
+}
+
+
+.video{
+    width:100%;
+}
+
+.c-video {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    overflow:hidden;
+}
+.c-video:hover .controls{
+    transform: translateY(0);
+}
+
+.controls{
+    display:flex;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    flex-wrap:wrap;
+    background: rgba(0, 0, 0,0.3);
+    transform: translateY(90%);
+    transition:ease-in-out;
+    transition:all 0.2s;
+}
+
+.Buttons button{
+    background:none;
+    border:0;
+    outline:0;
+    cursor:pointer;
+    color:orangered;
+    font-size:28px;
+    display:inline-block;
+    width:27px;
+    height:27px;
+}
+
+/*.buttons button:before{
+    content:"\f144";
+    font-family:"Font Awesome 5 Free";
+    width:30px;
+    height:30px;
+    display: inline-block;
+    font-size: 28px;
+    color: white;
+}*/
+
+#pp {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+#pp::before {
+    /*content: "\25ba";*/
+    font-family: "Font Awesome 5 Free";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    font-size: 25px;
+    /*color: orangered;*/
+}
+
+.progress{
+    height:10px;
+    top:0;
+    left:0;
+    width:100%;
+    background-color:transparent;
+}
+
+.progress-bar{
+    height:10px;
+    width: 100px;
+    background-color:orange;
+
+}
+
+#volSlide{
+    left:50px;
+    color:orange;
+}
+
+#volSlide::-webkit-slider-thumb{
+    -webkit-appearance:none;
+}
+
+#volSlide::-webkit-slider-runnable-track{
+    -webkit-appearance:none;
+    color:aqua;
+}

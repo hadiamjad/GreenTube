@@ -1,0 +1,47 @@
+﻿@using GreenTube.Models
+@model List<List<VideoFile>>
+
+@{
+    ViewBag.Title = "Homepage";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        @{ int i = 0;}
+        @foreach (var listitem in Model)
+        {
+
+            i += 1;
+            if(i==1)
+            {
+                <h1>Most Recent</h1>
+            }
+            else if(i==2)
+            {
+                <h1>Most Watched</h1>
+            }
+            else if(i==3)
+            {
+                <h1>Most Liked</h1>
+            }
+                
+            foreach (var item in listitem)
+            {
+                    <div class="col-sm-4 col-md-4 col-xs-12">
+                            <div class="title" style="width:250px;">@item.vidtitle</div>
+                            <div class="video-frame">
+                                <video style="width:250px; height:150px;" controls>
+                                    <source src="@Url.Content(item.videopath)" type="video/mp4" />
+                                </video>
+                            </div>
+                    </div>
+            }
+            <hr />
+        }
+    </body>
+</html>

@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllVideos</title>
+</head>
+<body>
+    <h2>Videos</h2>
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4 col-md-4 col-xs-12">
+                <div class="title" style="width:250px;">@item.vidtitle</div>
+                <div class="video-frame">
+                    <video style="width:250px; height:150px;" controls>
+                        <source src="@Url.Content(item.videopath)" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
+
+

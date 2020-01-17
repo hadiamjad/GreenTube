@@ -1,0 +1,15 @@
+﻿.mbox{
+
+    width:auto;
+    padding:70px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+}
+
+.mform input[type="email"], .mform input[type="password"]
+{
+
+}

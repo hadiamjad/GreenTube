@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using GreenTube.Models
+@model Creator
+
+@{
+    ViewBag.Title = "Creator Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    @{ Creator mydata = Model; }
+
+    <br />
+    <h1>TotalSubscribers:&nbsp;@mydata.totalsubscribers</h1>
+    <br />
+    @foreach (var item in mydata.myvids)
+    {
+        <h2>Video Details:</h2>
+        <div class="col-sm-4 col-md-4 col-xs-12">
+            <div class="title" style="width:250px;">@item.vidtitle</div>
+            <div class="video-frame">
+                <video style="width:250px; height:150px;" controls>
+                    <source src="@Url.Content(item.videopath)" type="video/mp4" />
+                </video>
+                <span>
+                    <p style="text-align: right;">Views: &nbsp; @item.views</p>
+                    <p style="text-align: right;">Likes: &nbsp; @item.likes</p>
+                    <p style="text-align: right;">DisLikes: &nbsp; @item.dislikes</p>
+                    <p style="text-align: right;">UploaderID: &nbsp; @item.uploader</p>
+
+                </span>
+            </div>
+        </div>
+    }
+    <hr />
+
+    <button type="button" class="btn btn-primary btn-danger btn-lg btn-block" onclick="window.location.href = '../VideoPB/Index'">
+        Upload New Video
+    </button>
+    <button type="button" class="btn btn-primary btn-danger btn-lg btn-block" onclick="window.location.href = '../Home/DeleteUser'">Delete Account!</button>
+</body>
+</html>
+
+
